@@ -33,14 +33,11 @@
             <code class="language-javascript">
 import {query, where, collection} from "firebase/firestore";
 
-// Initialize firebase
-const firebaseApp = initializeApp(config);
-
 // Initialize auth && firestore with the 'firebaseApp' property
-export const firestore = getFirestore(firebaseApp);
+const db = getFirestore(app);
 
 // Collection/doc ref
-const collectionRef = collection(firestore, "some-collection");
+const collectionRef = collection(db, "some-collection");
 
 // Use a query with collection listener
 const collectionListener = (collection) => {

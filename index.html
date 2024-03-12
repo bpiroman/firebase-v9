@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/coffee.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Firebase v9</title>
+</head>
+<body>
+    <h1>Firebase v9</h1>
+    <h1>Configuration</h1>
+    <h1>Initialisation</h1>
+    <h1>Authentication</h1>
+        <h3>Sign in with Email and Password</h3>
+        <h3>Sign out</h3>
+        <h3>Auth state listener</h3>
+    <h1>Firestore</h1>
+        <h3>Add/set document</h3>
+        <h3>Update delete Document</h3>
+        <h3>Sever timestamps and incrementing counters</h3>
+        <h3>Batch Operations</h3>
+        <h3>Querying and Reading Data</h3>
+        <pre>
+            <code class="language-javascript">
+// Use a query with collection listener
+const collectionListener = (collection) => {
+const collectionQuery = query(collectionRef, where("some-data", "==", true));
+
+onSnapshot(collectionQuery, (querySnapshot) => {
+    let dataArray = [];
+    querySnapshot.forEach((doc) => {
+    dataArray.push(doc.data());
+    });
+    dataArray.map((d) => console.log(d));
+});
+};
+            </code>
+        </pre>
+<script>hljs.highlightAll();</script>
+</body>
+</html>
